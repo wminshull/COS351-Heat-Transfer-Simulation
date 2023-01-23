@@ -20,3 +20,20 @@ To create images out of these files:
 1. `gcc starterImg.c readData.c -o img`
 2. `./img arg1 < heatput0`
 * Until I can fully debug this you'll need to set `arg1` to the size of the heatmap grid + 1. For example, using default settings of the programs, the resulting heatmaps can be converted to images using `./img 1001 < heatput0` where `heatput0` is the name of the heatmap you want to generate an image of. 
+
+
+Sample Output after finishing a run of `heatomp`:
+`99000
+99100
+99200
+99300
+99400
+99500
+99600
+99700
+99800
+99900
+100000
+100000 iterations.`
+
+As you can see, the program prints iterational updates every 100 iterations, and prints the final iteration count at the end of the program. 
