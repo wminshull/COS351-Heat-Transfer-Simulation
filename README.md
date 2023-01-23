@@ -37,4 +37,4 @@ Sample Output after finishing a run of `heatomp`:
 100000 iterations.
 ```
 
-As you can see, the program prints iterational updates every 100 iterations, and prints the final iteration count at the end of the program. 
+As you can see, the program prints iterational updates every 100 iterations, and prints the final iteration count at the end of the program. `output.txt` is the full output of a run of the program. 
