@@ -6,4 +6,4 @@ NOTE: The heatmaps are square so the img executable only takes one dimension as 
 
 To create images from these files you'll need to
 1. Build starterImg.c using `gcc starterImg.c readData.c -o img`
-2. Run the `img` executable with arguments that are correct for the heatmap, i.e.  `./img 1001 < heatmapfilename` (For best results use +1 the size of the heatmap as the argument).
+2. Run the `img` executable with arguments that are correct for the heatmap, i.e.  `./img 1001 < heatmapfilename` (For best results use +1 the size of the heatmap as the size argument, `heatmapfilename` would be a 1000x1000 heatmap).
