@@ -6,7 +6,7 @@ You can run this program serially or using OpenMP, but be warned the serial vers
 To build and run this using the OpenMP implementation:
 1. `gcc -fopenmp heatomp.c -o heatomp`
 2. `./heatomp arg1 arg2` 
-* arg1 and arg2 are height and width dimensions of the grid. If you specify 1 or none of these the program will run at its default grid size of 1,000 x 1,000. You MUST specify both in order to get a custom grid size. 
+* `arg1` and `arg2` are height and width dimensions of the grid. If you specify 1 or none of these the program will run at its default grid size of 1,000 x 1,000. You MUST specify both in order to get a custom grid size. 
 
 To build and run the Serial version of this program:
 1. `gcc heatserial.c -o heatserial`
