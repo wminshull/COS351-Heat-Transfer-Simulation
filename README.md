@@ -23,7 +23,7 @@ To create images out of these files:
 
 
 Sample Output after finishing a run of `heatomp`:
-`99000
+```99000
 99100
 99200
 99300
@@ -34,6 +34,7 @@ Sample Output after finishing a run of `heatomp`:
 99800
 99900
 100000
-100000 iterations.`
+100000 iterations.
+```
 
 As you can see, the program prints iterational updates every 100 iterations, and prints the final iteration count at the end of the program. 
