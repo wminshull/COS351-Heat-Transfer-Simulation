@@ -14,7 +14,7 @@ To build and run the Serial version of this program:
 * Again, you MUST specify both dimensions of the grid (`arg1` and `arg2`) if you want the program to run with a custom grid size. 
 By default this program will print a message every 100 iterations, telling you what iteration it's on, and it will produce a heatmap every 10,000 iterations. It will end after the default 100,000 generations.
 
-The heatmaps generated from these programs are will be generated as `heatput'k'` with `'k'` being the number of heatmaps the program has generated so far. The program will generate `heatput0` as soon as the grid is done being initialized, so the number at the end of each heatmap file corresponds to the number of tens of thousands of iterations the program has completed i.e. `heatput1` is the resulting heatmap after the program has made it through 10,000 iterations. 
+The heatmaps generated from these programs are will be generated as `heatput'k'` with `'k'` being the number of heatmaps the program has generated so far. The program will generate `heatput0` as soon as the grid is done being initialized, so the number at the end of each heatmap file corresponds to the number of tens of thousands of iterations the program has completed i.e. `heatput1` is the resulting heatmap after the program has made it through 10,000 iterations. The heatmaps will be generated in the same directory as the program was executed in. 
 
 To create images out of these files:
 1. `gcc starterImg.c readData.c -o img`
