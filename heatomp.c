@@ -152,12 +152,12 @@ int main(int argc, char **argv)
     int id;
     double idmax;
     // double start = omp_get_wtime();
-#pragma omp parallel private(neighborAverage, neighborSum, id, idmax) shared(err)
+
+    int numthreads = omp_get_num_threads();
+    id = omp_get_thread_num();
+    while (err > tol && iter < iter_max)
     {
-        int i, j;
-        int numthreads = omp_get_num_threads();
-        id = omp_get_thread_num();
-        while (/*err > tol &&*/ iter < iter_max)
+#pragma omp parallel private(neighborAverage, neighborSum, id, i, j, idmax) reduction(max : err)
         {
             err = 0.0;
             neighborAverage = 0.0;
@@ -183,13 +183,10 @@ int main(int argc, char **argv)
                 }
 
                 // Hint: when parallel, not thread-safe!
-                idmax = max(idmax, fabs(Anew[j][i] - A[j][i]));
+                idmax = fabs(Anew[j][i] - A[j][i]) > idmax ? fabs(Anew[j][i] - A[j][i]) : idmax;
 
             } // next i    // next j
-#pragma omp critical
-            {
-                err = max(err, idmax);
-            }
+            err = max(err, idmax);
             // fprintf(stderr, "err is %f", err);
             // fprintf(stderr, " iter is %d", iter);
             /* copy new map to old */
@@ -222,8 +219,8 @@ int main(int argc, char **argv)
                     printMap(Anew, n, m);
                 }
             }
-        } // endwhile
-    }
+        }
+    } // endwhile
 
 /*
  * Write this to stderr to avoid mixing in with the values;
